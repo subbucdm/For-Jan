@@ -79,12 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* OPEN FILE */
   document.getElementById("openFile").onclick = () => {
-    folder.classList.add("hidden");
-    scene.classList.add("blur-bg");
-    paper.classList.remove("hidden");
-    paperText.textContent = pages[0];
-    music.play().catch(() => {});
-  };
+  folder.classList.add("hidden");
+  scene.classList.add("blur-bg");
+  paper.classList.remove("hidden");
+  paperText.textContent = pages[0];
+
+  music.currentTime = 0;
+  music.play();
+};
 
   /* PAPER NEXT */
   document.getElementById("nextPage").onclick = () => {
