@@ -1,0 +1,290 @@
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== BACKGROUND ===== */
+#background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: filter 0.4s ease;
+}
+
+/* Blur ONLY during focus moments */
+#scene.blur-bg #background {
+  filter: blur(8px) brightness(0.92);
+}
+
+/* ===== WELCOME ===== */
+.welcome-box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  padding: 22px 24px;
+  text-align: center;
+  z-index: 10;
+  border-radius: 14px;
+}
+
+/* ===== CHARACTERS ===== */
+.character {
+  position: absolute;
+  bottom: 0;
+  width: 26%;
+  z-index: 5;
+}
+
+.left { left: 4%; }
+.right { right: 4%; }
+
+.hidden { display: none; }
+
+/* ===== AMY / JAKE DIALOGUE ===== */
+.amy-box,
+.jake-box {
+  position: absolute;
+  width: 400px;
+  background: #f3e27a;
+  color: #000;
+  padding: 18px 22px;
+  border-radius: 16px;
+  z-index: 10;
+  line-height: 1.5;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+
+.amy-box {
+  left: 20%;
+  bottom: 34%;
+}
+
+.jake-box {
+  right: 20%;
+  bottom: 34%;
+}
+
+/* ===== CENTER ELEMENTS ===== */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+}
+
+.center img {
+  width: 500px;
+  max-width: 85vw;
+}
+
+/* ===== PAPER TEXT (LOCKED) ===== */
+#paperText {
+  position: absolute;
+  top: 36%;
+  left: 40%;
+  transform: translateX(-40%);
+  width: 380px;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  line-height: 1.9;
+  color: #1f1f1f;
+  text-align: left;
+}
+
+/* ===== QUIZ / RESPONSE CARD (B99 OG STYLE) ===== */
+.quiz-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  background: #fff6b3;
+  border-radius: 26px;
+  padding: 34px 36px 30px;
+  z-index: 20;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+/* Question / score text */
+.quiz-box strong {
+  display: block;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 22px;
+  color: #000;
+  font-weight: 600;
+}
+
+/* ===== ANSWER PILLS (BLACK ACCENT) ===== */
+.quiz-box button {
+  display: block;
+  width: 100%;
+  margin: 14px 0;
+  padding: 14px 18px;
+  font-size: 16px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.12s ease, background 0.2s ease;
+}
+
+.quiz-box button:hover {
+  background: #000;
+  transform: scale(1.03);
+}
+
+/* ===== BINGPOT ===== */
+.bingpot-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #d62828;
+  text-align: center;
+}
+
+.bingpot-gif {
+  width: 320px;
+  display: block;
+  margin: 18px auto;
+}
+
+/* ===== HEART CONFETTI (FOR LATER) ===== */
+.heart {
+  position: fixed;
+  bottom: -40px;
+  font-size: 28px;
+  z-index: 1000; /* ABOVE FINAL SCREEN */
+  animation: floatUp 3.5s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* ===== HOLT BOX ===== */
+.holt-box {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  background: #fff6b3;
+  color: #000;
+  padding: 20px 24px;
+  border-radius: 18px;
+  text-align: center;
+  z-index: 20;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+}
+
+/* ===== VALENTINE CARD ===== */
+.valentine-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  background: #fff6b3;
+  border-radius: 26px;
+  padding: 36px;
+  z-index: 25;
+  text-align: center;
+  box-shadow: 0 22px 55px rgba(0,0,0,0.4);
+}
+
+/* YES / NO BUTTONS */
+.valentine-buttons {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.valentine-buttons button {
+  padding: 12px 26px;
+  font-size: 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #111;
+  color: #fff;
+}
+
+#noBtn {
+  background: #e0e0e0;
+  color: #000;
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+/* ===== FINAL FULLSCREEN HOT DAMN ===== */
+.final-fullscreen {
+  position: fixed;
+  inset: 0;
+  background: #fff6b3; /* B99 yellow */
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+/* ===== MOBILE FRIENDLY ===== */
+@media (max-width: 768px) {
+  .character {
+    width: 40%;
+  }
+
+  .amy-box,
+  .jake-box,
+  .holt-box,
+  .quiz-box,
+  .valentine-box {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #paperText {
+    width: 300px;
+    font-size: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .center img {
+    width: 90vw;
+  }
+}
