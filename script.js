@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const scene = document.getElementById("scene");
+  // --- AUDIO UNLOCK (CRITICAL FOR CHROME / iOS) ---
+document.body.addEventListener("click", () => {
+  music.play().then(() => {
+    music.pause();
+    music.currentTime = 0;
+  }).catch(() => {});
+}, { once: true }); const scene = document.getElementById("scene");
   const bg = document.getElementById("background");
   const welcome = document.getElementById("welcome");
   const dialogue = document.getElementById("dialogue");
