@@ -7,6 +7,13 @@ document.body.addEventListener("click", () => {
     music.currentTime = 0;
   }).catch(() => {});
 }, { once: true }); const scene = document.getElementById("scene");
+const musicBtn = document.getElementById("musicBtn");
+
+musicBtn.onclick = () => {
+  music.currentTime = 0;
+  music.play();
+  musicBtn.style.display = "none";
+};
   const bg = document.getElementById("background");
   const welcome = document.getElementById("welcome");
   const dialogue = document.getElementById("dialogue");
